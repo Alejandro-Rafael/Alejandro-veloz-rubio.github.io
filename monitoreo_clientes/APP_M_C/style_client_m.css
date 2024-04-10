@@ -65,7 +65,7 @@ button:hover {
 #table_info {
     border-collapse: collapse;
     margin: 0 auto;
-    font-size: 0.9em;
+    font-size: 1em;
     min-width: 100px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
