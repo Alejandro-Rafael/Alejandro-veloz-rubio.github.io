@@ -1,0 +1,124 @@
+/* Resetear estilos predeterminados */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../../../Imagenes/menu.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Estilo del contenedor del menú */
+div.menu-container {
+    background-color: #f8f9fafb; /* Color de fondo */
+    padding: 20px; /* Espacio interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 3); /* Sombra */
+    margin-top: 100px;
+    margin-left: 90px;
+    margin-right: 3px;
+    width: 400px;
+    height: 300px;
+    
+}
+
+/* Estilo de los enlaces del menú */
+div.menu-container a {
+    text-decoration: none; /* Quita el subrayado */
+    color: #333; /* Color del texto */
+    font-size: 30px; /* Tamaño de la fuente */
+    margin-right: 20px; /* Margen derecho entre enlaces */
+    transition: color 0.3s; /* Transición de color */
+}
+
+/* Estilo de los enlaces del menú al pasar el cursor */
+div.menu-container a:hover {
+    color: #007bff; /* Cambio de color al pasar el cursor */
+}
+
+/* Estilo del contenedor del menú para que sea más grande en dispositivos móviles */
+@media (max-width: 40px) {
+    div.menu-container {
+        padding: 10px;
+    }
+}
+
+div.menu-container {
+    border-radius: 10px; /* Borde redondeado */
+}
+
+/* Estilo de los enlaces del menú */
+div.menu-container a {
+    padding: 10px 20px; /* Espacio interno */
+}
+
+/* Estilo del contenedor del menú para que sea centrado */
+div.menu-container {
+    text-align: center;
+}
+
+/* Estilo de los enlaces del menú al pasar el cursor */
+div.menu-container a:hover {
+    color: #fff; /* Cambio de color al pasar el cursor */
+    background-color: #007bff; /* Cambio de color de fondo al pasar el cursor */
+    border-radius: 10px;
+}
+
+
+/****************/
+
+
+/* Estilo del contenedor del menú */
+div.menu-container_2 {
+    background-color: #f8f9fafb; /* Color de fondo */
+    padding: 20px; /* Espacio interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 3); /* Sombra */
+    margin-top: 100px;
+    margin-left: 90px;
+    margin-right: 3px;
+    width: 400px;
+    height: 250px;
+    
+}
+
+/* Estilo de los enlaces del menú */
+div.menu-container_2 a {
+    text-decoration: none; /* Quita el subrayado */
+    color: #333; /* Color del texto */
+    font-size: 30px; /* Tamaño de la fuente */
+    margin-right: 20px; /* Margen derecho entre enlaces */
+    transition: color 0.3s; /* Transición de color */
+}
+
+/* Estilo de los enlaces del menú al pasar el cursor */
+div.menu-container_2 a:hover {
+    color: #007bff; /* Cambio de color al pasar el cursor */
+}
+
+/* Estilo del contenedor del menú para que sea más grande en dispositivos móviles */
+@media (max-width: 40px) {
+    div.menu-container_2 {
+        padding: 10px;
+    }
+}
+
+div.menu-container_2 {
+    border-radius: 10px; /* Borde redondeado */
+}
+
+/* Estilo de los enlaces del menú */
+div.menu-container_2 a {
+    padding: 10px 20px; /* Espacio interno */
+}
+
+/* Estilo del contenedor del menú para que sea centrado */
+div.menu-container_2 {
+    text-align: center;
+}
+
+/* Estilo de los enlaces del menú al pasar el cursor */
+div.menu-container_2 a:hover {
+    color: #fff; /* Cambio de color al pasar el cursor */
+    background-color: #007bff; /* Cambio de color de fondo al pasar el cursor */
+    border-radius: 10px;
+}

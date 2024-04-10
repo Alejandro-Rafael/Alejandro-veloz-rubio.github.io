@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="JS/style_client.css">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="APP/menu_style.css">
+    <title>Menu</title>
 </head>
 <body>
-    <!--Se pone titulo a la interfaz html-->
-    <h1>Reporte de incidencias Barcelo</h1>
+    <div class="menu-container">
+        <h1>Manejo de incidencias</h1>
+        <a href="levantar_report/index.html" id="gr">Levantar reportes</a><br><br>
+        <a href="Admin/index_admin.html" id="ra">Asignacion de reportes</a><br><br>
+        <a href="monitoreo/index_m.html" id="mr">Monitoreo de reportes</a><br><br>
+        <a href="responsable_report/index_respon.html" id="cr">Cierre de reportes</a>
+
+    </div>
+
+    <div class="menu-container_2">
+        <h1>Catalogos</h1>
+        <a href="add_area/index_area.html" id="as">Areas</a><br><br>
+        <a href="add_empleados/index_empleado.html" id="es">Empleados</a><br><br>
+        <a href="add_type_incident/index_t_inci.html"id="in">Incidencias</a><br><br>
+    </div>
     
-    <!--Se crea un formulario donde se registrara el reporte del cliente-->
-    <form id="form_client"> 
-        <label>Numero de habitación:</label><br>
-        <input type="number" id="num_room" name="num_room"><br><br>
 
-        <label>Tipo de Incidencia:</label><br>
-        <select name="tipos_inci" id="tipos_inci"></select><br><br><br>
-
-        <!--Este boton permite agregar la incidencia-->
-        <button type="button" id="btnagregar">Agregar</button>
-    </form>
-
-    <!--El archivo HTMl se conecta con el archivo JS-->
-    <script src="JS/app.js"></script>
 </body>
 </html>
