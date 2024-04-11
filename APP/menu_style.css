@@ -36,12 +36,6 @@ div.menu-container a:hover {
     color: #007bff; /* Cambio de color al pasar el cursor */
 }
 
-/* Estilo del contenedor del menú para que sea más grande en dispositivos móviles */
-@media (max-width: 40px) {
-    div.menu-container {
-        padding: 10px;
-    }
-}
 
 div.menu-container {
     border-radius: 10px; /* Borde redondeado */
@@ -96,12 +90,6 @@ div.menu-container_2 a:hover {
     color: #007bff; /* Cambio de color al pasar el cursor */
 }
 
-/* Estilo del contenedor del menú para que sea más grande en dispositivos móviles */
-@media (max-width: 40px) {
-    div.menu-container_2 {
-        padding: 10px;
-    }
-}
 
 div.menu-container_2 {
     border-radius: 10px; /* Borde redondeado */
