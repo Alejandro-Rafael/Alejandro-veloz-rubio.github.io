@@ -6,12 +6,11 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    text-align: center;
 }
 
 h1 {
     color: #333;
-    margin-top: 20px;
-    margin-bottom: 10px;
     
 }
 
@@ -21,7 +20,7 @@ form {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-    
+    margin: 0 auto;
 }
 
 label {
@@ -87,7 +86,6 @@ a {
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
     padding: 10px 20px; /* Espacio interno */
-    margin-left: 90%;
     background-color: #000000; 
     border-radius: 100px;
   }
