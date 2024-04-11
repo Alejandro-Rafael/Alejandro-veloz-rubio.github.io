@@ -67,7 +67,6 @@ textarea {
   a {
     text-decoration: none; /* Quita el subrayado */
     color: #121111; /* Color del texto */
-    font-size: 25px; /* Tamaño de la fuente */
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
     padding: 10px 20px; /* Espacio interno */
