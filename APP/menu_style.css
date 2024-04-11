@@ -5,7 +5,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-
+    text-align: center;
 }
 
 h1{
@@ -50,10 +50,6 @@ div.menu-container a {
     padding: 10px 20px; /* Espacio interno */
 }
 
-/* Estilo del contenedor del menú para que sea centrado */
-div.menu-container {
-    text-align: center;
-}
 
 /* Estilo de los enlaces del menú al pasar el cursor */
 div.menu-container a:hover {
@@ -105,10 +101,6 @@ div.menu-container_2 a {
     padding: 10px 20px; /* Espacio interno */
 }
 
-/* Estilo del contenedor del menú para que sea centrado */
-div.menu-container_2 {
-    text-align: center;
-}
 
 /* Estilo de los enlaces del menú al pasar el cursor */
 div.menu-container_2 a:hover {
