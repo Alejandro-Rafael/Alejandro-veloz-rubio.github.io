@@ -12,7 +12,6 @@ h1 {
     color: #ffffff;
     margin-top: 20px;
     margin-bottom: 10px;
-    
 }
 
 label {
@@ -21,8 +20,9 @@ label {
     color: #ffffff;
 }
 
-select,input{
-    width: 19%;
+select,
+input {
+    width: 100%; /* Ajusta el ancho al 100% para dispositivos móviles */
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -47,49 +47,62 @@ button:hover {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 400px;
-    border-radius: 5px 5px 0 0;
+    width: 100%; /* Ajusta el ancho al 100% para dispositivos móviles */
+    border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     text-align: center;
-  }
-  
-  .content-table thead tr {
+}
+
+.content-table thead tr {
     background-color: #007bff;
     color: #ffffff;
     font-weight: bold;
-  }
-  
-  .content-table th,
-  .content-table td {
+}
+
+.content-table th,
+.content-table td {
     padding: 12px 15px;
-  }
-  
-  .content-table tbody tr {
+}
+
+.content-table tbody tr {
     border-bottom: 1px solid #dddddd;
     background-color: #f3f3f3;
-  }
-  
-  .content-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-  }
-  
-  .content-table tbody tr:last-of-type {
-    border-bottom: 2px solid #007bff;
-  }
-  
-    /* Estilo de los enlaces del menú */
-a {
-  text-decoration: none; /* Quita el subrayado */
-  color: #000000; /* Color del texto */
-  font-size: 25px; /* Tamaño de la fuente */
-  margin-right: 20px; /* Margen derecho entre enlaces */
-  transition: color 0.3s; /* Transición de color */
-  padding: 10px 20px; /* Espacio interno */
-  margin-left: 90%;
-  background-color: #ffffff; 
-  border-radius: 100px;
 }
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #007bff;
+}
+
+/* Estilo de los enlaces del menú */
+a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px; /* Reducir el tamaño de la fuente para dispositivos móviles */
+    margin-right: 10px; /* Reducir el margen derecho */
+    transition: color 0.3s;
+    padding: 10px 15px; /* Reducir el espacio interno */
+    background-color: #ffffff;
+    border-radius: 100px;
+}
+
+a:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 100px;
+}
+
+/* Consulta de medios para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 20px; /* Reducir el tamaño del título en dispositivos móviles */
+    }
+}
+
 
 a:hover {
   color: #fff; /* Cambio de color al pasar el cursor */
