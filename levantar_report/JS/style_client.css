@@ -73,7 +73,7 @@ textarea {
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
     padding: 10px 20px; /* Espacio interno */
-    margin-left: 90%;
+    margin-left: 1em;
     background-color: #ffffff; 
     border-radius: 100px;
   }
