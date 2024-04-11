@@ -6,11 +6,11 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    text-align: center;
 }
 
 h1 {
     color: #ffffff;
-    text-align: center;
 }
 
 form {
@@ -29,10 +29,8 @@ label {
     color: #333;
 }
 
-input[type="number"],
-
-select {
-    width: 100%;
+input, select {
+    width: 200px;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -73,7 +71,6 @@ textarea {
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
     padding: 10px 20px; /* Espacio interno */
-    margin-left: 0.5em;
     background-color: #ffffff; 
     border-radius: 100px;
   }
