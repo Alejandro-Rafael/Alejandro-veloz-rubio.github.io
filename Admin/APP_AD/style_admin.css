@@ -7,6 +7,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    text-align: center;
 }
 
 h1 {
@@ -23,7 +24,7 @@ label {
 }
 
 select {
-    width: 100%;
+    width: 100em;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -43,7 +44,7 @@ select {
 button {
     background-color: #007bff;
     color: #fff;
-    padding: 10px 20px;
+    padding: 1em;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -61,7 +62,7 @@ button:hover {
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    text-align: center;
+    margin:0 auto;
   }
   
   .content-table thead tr {
@@ -90,16 +91,17 @@ button:hover {
     border-bottom: 2px solid #007bff;
   }
   
+  .content-table select{
+    width: 100%;
+  }
 
   /* Estilo de los enlaces del menú */
 a {
   text-decoration: none; /* Quita el subrayado */
   color: #121111; /* Color del texto */
   font-size: 25px; /* Tamaño de la fuente */
-  margin-right: 20px; /* Margen derecho entre enlaces */
   transition: color 0.3s; /* Transición de color */
   padding: 10px 20px; /* Espacio interno */
-  margin-left: 90%;
   background-color: #ffffff; 
   border-radius: 100px;
 }
