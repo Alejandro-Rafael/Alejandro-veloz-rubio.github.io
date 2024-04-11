@@ -8,6 +8,10 @@ body {
 
 }
 
+h1{
+    font-size: 1.7em;
+}
+
 /* Estilo del contenedor del menú */
 div.menu-container {
     background-color: #f8f9fafb; /* Color de fondo */
@@ -16,8 +20,8 @@ div.menu-container {
     margin-top: 100px;
     margin-left: 90px;
     margin-right: 3px;
-    width: 25em;
-    height: 20em;
+    width: 19.5em;
+    height: 17em;
     margin: 0 auto;
 }
 
@@ -25,9 +29,10 @@ div.menu-container {
 div.menu-container a {
     text-decoration: none; /* Quita el subrayado */
     color: #333; /* Color del texto */
-    font-size: 2em; /* Tamaño de la fuente */
+    font-size: 1.4em; /* Tamaño de la fuente */
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
+    font-weight: bold;
 }
 
 /* Estilo de los enlaces del menú al pasar el cursor */
@@ -69,7 +74,7 @@ div.menu-container_2 {
     margin-top: 100px;
     margin-left: 90px;
     margin-right: 3px;
-    width: 15em;
+    width: 13em;
     height: 15em;
     margin: 0 auto;
     
@@ -79,9 +84,10 @@ div.menu-container_2 {
 div.menu-container_2 a {
     text-decoration: none; /* Quita el subrayado */
     color: #333; /* Color del texto */
-    font-size: 2em; /* Tamaño de la fuente */
+    font-size: 1.4em; /* Tamaño de la fuente */
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
+    font-weight: bold;
 }
 
 /* Estilo de los enlaces del menú al pasar el cursor */
