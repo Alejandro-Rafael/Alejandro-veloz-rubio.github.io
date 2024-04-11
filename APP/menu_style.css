@@ -9,7 +9,7 @@ body {
 }
 
 h1{
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 /* Estilo del contenedor del menú */
@@ -17,11 +17,8 @@ div.menu-container {
     background-color: #f8f9fafb; /* Color de fondo */
     padding: 1em; /* Espacio interno */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 3); /* Sombra */
-    margin-top: 100px;
-    margin-left: 90px;
-    margin-right: 3px;
-    width: 19.5em;
-    height: 17em;
+    width: 19.4em;
+    height: 15em;
     margin: 0 auto;
 }
 
@@ -67,11 +64,8 @@ div.menu-container_2 {
     background-color: #f8f9fafb; /* Color de fondo */
     padding: 1em; /* Espacio interno */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 3); /* Sombra */
-    margin-top: 100px;
-    margin-left: 90px;
-    margin-right: 3px;
     width: 13em;
-    height: 15em;
+    height: 13em;
     margin: 0 auto;
     
 }
