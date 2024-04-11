@@ -24,7 +24,7 @@ label {
 }
 
 select {
-    width: 100em;
+    width: 200px;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -92,7 +92,7 @@ button:hover {
   }
   
   .content-table select{
-    width: 100%;
+    width: 230px;
   }
 
   /* Estilo de los enlaces del menú */
