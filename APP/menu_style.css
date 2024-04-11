@@ -26,7 +26,7 @@ div.menu-container {
 div.menu-container a {
     text-decoration: none; /* Quita el subrayado */
     color: #333; /* Color del texto */
-    font-size: 30px; /* Tamaño de la fuente */
+    font-size: 2em; /* Tamaño de la fuente */
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
 }
@@ -86,7 +86,7 @@ div.menu-container_2 {
 div.menu-container_2 a {
     text-decoration: none; /* Quita el subrayado */
     color: #333; /* Color del texto */
-    font-size: 30px; /* Tamaño de la fuente */
+    font-size: 2em; /* Tamaño de la fuente */
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
 }
