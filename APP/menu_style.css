@@ -1,24 +1,24 @@
 /* Resetear estilos predeterminados */
 body, html {
-    margin: 0 auto;
-    padding: 0 auto;
     font-family: Arial, sans-serif;
     background-image: url(../../../Imagenes/menu.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+
 }
 
 /* Estilo del contenedor del menú */
 div.menu-container {
     background-color: #f8f9fafb; /* Color de fondo */
-    padding: 20em; /* Espacio interno */
+    padding: 1em; /* Espacio interno */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 3); /* Sombra */
     margin-top: 100px;
     margin-left: 90px;
     margin-right: 3px;
     width: 400px;
     height: 300px;
+    margin: 0 auto;
     
 }
 
@@ -26,7 +26,7 @@ div.menu-container {
 div.menu-container a {
     text-decoration: none; /* Quita el subrayado */
     color: #333; /* Color del texto */
-    font-size: 1em; /* Tamaño de la fuente */
+    font-size: 30px; /* Tamaño de la fuente */
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
 }
@@ -34,6 +34,13 @@ div.menu-container a {
 /* Estilo de los enlaces del menú al pasar el cursor */
 div.menu-container a:hover {
     color: #007bff; /* Cambio de color al pasar el cursor */
+}
+
+/* Estilo del contenedor del menú para que sea más grande en dispositivos móviles */
+@media (max-width: 40px) {
+    div.menu-container {
+        padding: 10px;
+    }
 }
 
 div.menu-container {
@@ -64,13 +71,14 @@ div.menu-container a:hover {
 /* Estilo del contenedor del menú */
 div.menu-container_2 {
     background-color: #f8f9fafb; /* Color de fondo */
-    padding: 20px; /* Espacio interno */
+    padding: 1em; /* Espacio interno */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 3); /* Sombra */
     margin-top: 100px;
     margin-left: 90px;
     margin-right: 3px;
     width: 400px;
     height: 250px;
+    margin: 0 auto;
     
 }
 
@@ -78,7 +86,7 @@ div.menu-container_2 {
 div.menu-container_2 a {
     text-decoration: none; /* Quita el subrayado */
     color: #333; /* Color del texto */
-    font-size: 1em; /* Tamaño de la fuente */
+    font-size: 30px; /* Tamaño de la fuente */
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
 }
@@ -86,6 +94,13 @@ div.menu-container_2 a {
 /* Estilo de los enlaces del menú al pasar el cursor */
 div.menu-container_2 a:hover {
     color: #007bff; /* Cambio de color al pasar el cursor */
+}
+
+/* Estilo del contenedor del menú para que sea más grande en dispositivos móviles */
+@media (max-width: 40px) {
+    div.menu-container_2 {
+        padding: 10px;
+    }
 }
 
 div.menu-container_2 {
