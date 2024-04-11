@@ -6,6 +6,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    text-align: center;
 }
 
 h1{
@@ -20,6 +21,7 @@ form {
     border-radius: 8px;
     padding: 20px;
     max-width: 400px;
+    margin:0 auto;
     
 }
 
@@ -73,7 +75,6 @@ a {
     margin-right: 20px; /* Margen derecho entre enlaces */
     transition: color 0.3s; /* Transición de color */
     padding: 10px 20px; /* Espacio interno */
-    margin-left: 90%;
     background-color: #ffffff; 
     border-radius: 100px;
   }
