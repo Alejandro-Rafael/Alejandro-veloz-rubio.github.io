@@ -36,6 +36,8 @@ input, select {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    font-size: 15pt;   
+    font-family : Arial, sans-serif;   
 }
 
 button {
@@ -45,6 +47,8 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 15pt;   
+    font-family : Arial, sans-serif; 
 }
 
 button:hover {
@@ -61,13 +65,15 @@ textarea {
     background-color: #f8f8f8;
     font-size: 16px;
     resize: none;
+    font-size: 15pt;   
+    font-family : Arial, sans-serif; 
   }
 
   /* Estilo de los enlaces del menú */
   a {
     text-decoration: none; /* Quita el subrayado */
     color: #121111; /* Color del texto */
-    margin-right: 20px; /* Margen derecho entre enlaces */
+    font-size: 25px; /* Tamaño de la fuente */
     transition: color 0.3s; /* Transición de color */
     padding: 10px 20px; /* Espacio interno */
     background-color: #ffffff; 
