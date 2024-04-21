@@ -230,11 +230,11 @@ btn_buscar_area.addEventListener('click',()=>{
                 <th>Area</th>
                 <th>Empleado Asignado</th>
                 <th>Hora en que se asigno al empleado</th>
-                <th>Estado del reporte</th>
-                <th>Fecha y hora del estado: abierto</th>
-                <th>Fecha y hora del estado: en proceso</th>
-                <th>Fecha y hora del estado: cerrado</th>
-                <th>Fecha y hora del estado: inconcluso</th>
+                <th>Estatus del reporte</th>
+                <th>Fecha y hora del estatus: abierto</th>
+                <th>Fecha y hora del estatus: en proceso</th>
+                <th>Fecha y hora del estatus: cerrado</th>
+                <th>Fecha y hora del estatus: inconcluso</th>
                 <th>Comentarios</th>
                 <th>Nombre del empleado que cerro el reporte</th>
             </tr>

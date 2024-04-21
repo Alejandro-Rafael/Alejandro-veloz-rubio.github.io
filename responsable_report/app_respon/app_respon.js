@@ -6,6 +6,126 @@ let lista=document.getElementById('tabla_reportes');
  //se hace referencia donde se mostraran los reportes
  let div=document.getElementById('empleados');
 
+
+function buscar_reportes_areas(){
+    
+    //se obtiene el area seleccionada
+    let area=document.getElementById('areas_empleados').value;
+
+    if(area==""){
+
+        alert('Seleccione un area')
+        div.innerHTML="";
+        lista.innerHTML="";
+        
+    }else{
+
+        empleados=' ';
+        div.innerHTML="";
+
+        fetch(`https://incidenciakarmina-production.up.railway.app/api/Empleados/${area}`,{
+            method:'GET',
+            body:JSON.stringify(),
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+        .then(res=>res.json())
+        .then(json=>{
+
+            for(let i=0;i<json.length;i++){
+    
+                empleados+=`<option value="${json[i].id_empleado}">${json[i].apellido_p} ${json[i].apellido_m} ${json[i].nombres}</option>`;
+            }
+
+
+        })
+
+        
+        //se hace la peticion para buscar reportes en proceso en base al area
+     fetch(`https://incidenciakarmina-production.up.railway.app/api/Reporte/reportes_area/responsable/${area}`,{
+        method:'GET',
+        body:JSON.stringify(),
+        headers:{
+            'Content-Type':'application/json'
+        }
+    })
+    .then(res=>res.json())
+    .then(json=>{
+
+        if(json.length==0){
+            alert('Sin reportes pendientes')
+            div.innerHTML="";
+            lista.innerHTML="";
+        }else{
+
+            let titulos=`
+        <thead>
+        <tr>
+            <th>Numero de habitacion</th>
+            <th>Problema</th>
+            <th>Observaciones</th>
+            <th>Empleado Asignado</th>
+            <th>Estado del reporte</th>
+            <th>Comentarios</th>
+            <th>Nombre del empleado que cerro el reporte</th>
+            <th>Finalizar reporte</th>
+        </tr>
+        </thead>
+        `;
+
+        let rest='';
+                
+                for(let i=0;i<json.length;i++){
+                    if(json[i].observaciones==null){
+                        json[i].observaciones="- - -"
+                    }
+                    rest+=`
+                    <tbody>
+                    <tr>
+                        <td>${json[i].numero_habitacion}</td>
+                        <td>${json[i].problema}</td> 
+                        <td>${json[i].observaciones}</td> 
+                        <td>${json[i].apellido_p} ${json[i].apellido_m} ${json[i].nombres}</td>      
+                        
+                        <td>
+                        <select id="${json[i].id_report}estados">
+                        <option value="">*</option>
+                        <option value="Cerrado">Cerrado</option>
+                        <option value="Inconcluso">Inconcluso</option>
+                        </select>
+                        </td>          
+                        
+                        <td><textarea id="${json[i].id_report}comentarios"></textarea></td>  
+                        <td>
+                        <select id="${json[i].id_report}empleados">
+                        <option value="">*</option>
+                        ${empleados}
+                        </select>
+                        </td>    
+                        <td><button onclick="Empleado_asignado(${json[i].id_report},'buscar_reportes_areas')">Terminar reporte</button></td> 
+                    </tr>
+                    </tbody>
+                    `;
+                }
+
+
+            //se inserta los valores en la tabla
+            lista.innerHTML=titulos+rest;
+
+        }
+
+        
+
+    })
+
+
+
+
+    }
+    
+}
+
 //esta funcion manda llamar las areas del hotel
 function areas_empleados(){
 
@@ -55,6 +175,8 @@ function buscar_empleados(){
      }else{
      //en esta variable se guardan los empleados
      empleados=' ';
+
+     lista.innerHTML="";
  
      //se hace la peticion para buscar empleados en base al area
      fetch(`https://incidenciakarmina-production.up.railway.app/api/Empleados/${area}`,{
@@ -184,7 +306,7 @@ function buscar_reportes(){
                         ${empleados}
                         </select>
                         </td>    
-                        <td><button onclick="Empleado_asignado(${json[i].id_report})">Terminar reporte</button></td> 
+                        <td><button onclick="Empleado_asignado(${json[i].id_report},'buscar_reportes')">Terminar reporte</button></td> 
                     </tr>
                     </tbody>
                     `;
@@ -201,7 +323,7 @@ function buscar_reportes(){
 }
 
 //esta funcion registra la finalizacion del reporte
-function Empleado_asignado(id_reporte){
+function Empleado_asignado(id_reporte,definitiva){
 
     //se obtinen los valores de cada reporte como id del reporte, estado, comentarios y el empleado que cerro
     //fecha y hora 
@@ -245,7 +367,14 @@ function Empleado_asignado(id_reporte){
             //si todo sale bien se muestra el mensaje
             // se actualiza los reportes
             alert('Atendio un reporte')
-            buscar_reportes();
+            if(definitiva=='buscar_reportes'){
+
+                buscar_reportes();
+
+            }else if(definitiva=='buscar_reportes_areas'){
+          
+                buscar_reportes_areas();
+            }
         })
 
     }
