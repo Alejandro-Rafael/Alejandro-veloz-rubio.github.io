@@ -29,7 +29,7 @@ label {
     color: #333;
 }
 
-input,#Areas_hotel,#Areas_hotel_edit {
+input{
     width: 59%;
     padding: 8px;
     margin-bottom: 15px;
@@ -39,7 +39,7 @@ input,#Areas_hotel,#Areas_hotel_edit {
 }
 
 select {
-    width: 19%;
+    width: 212px;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;

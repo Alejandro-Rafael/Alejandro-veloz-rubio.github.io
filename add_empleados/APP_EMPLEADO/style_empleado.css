@@ -32,7 +32,7 @@ label {
 }
 
 
-input,#areas_hotel_empleados,#areas_hotel_empleados_edit {
+input{
     width: 59%;
     padding: 8px;
     margin-bottom: 15px;
@@ -42,7 +42,7 @@ input,#areas_hotel_empleados,#areas_hotel_empleados_edit {
 }
 
 select {
-    width: 19%;
+    width: 212px;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
