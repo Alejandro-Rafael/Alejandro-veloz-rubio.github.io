@@ -29,7 +29,7 @@ label {
     color: #333;
 }
 
-input[type="number"]{
+input{
     text-align: center;
     width: 212px;
     padding: 8px;
