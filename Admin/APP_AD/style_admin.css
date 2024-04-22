@@ -32,14 +32,6 @@ select {
     
 }
 
-#areas {
-  width: 19%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
 
 button {
     background-color: #007bff;
