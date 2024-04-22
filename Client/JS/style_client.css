@@ -30,7 +30,15 @@ label {
     color: #333;
 }
 
-input[type="number"],
+input[type="number"]{
+    text-align: center;
+    width: 212px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 
 select {
     width: 212px;
