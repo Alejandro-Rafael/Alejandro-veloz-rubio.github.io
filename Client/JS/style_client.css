@@ -6,6 +6,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    text-align: center;
 }
 
 h1 {
@@ -32,12 +33,13 @@ label {
 input[type="number"],
 
 select {
-    width: 100%;
+    width: 212px;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    
 }
 
 button {
