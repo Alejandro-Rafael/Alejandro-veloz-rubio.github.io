@@ -23,7 +23,7 @@ label {
 }
 
 select{
-    width: 100%;
+    width: 212px;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -31,16 +31,7 @@ select{
     box-sizing: border-box;
 }
 
-#empleados_areas,#areas_empleados{
 
-    width: 19%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-
-}
 
 button {
     background-color: #007bff;
