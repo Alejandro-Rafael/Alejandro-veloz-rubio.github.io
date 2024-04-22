@@ -11,7 +11,6 @@ body {
 
 h1 {
     color: #ffffff;
-    text-align: center;
 }
 
 form {
@@ -40,14 +39,14 @@ input[type="number"]{
     box-sizing: border-box;
 }
 
+
 select {
     width: 212px;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;  
 }
 
 button {
@@ -73,4 +72,21 @@ textarea {
     background-color: #f8f8f8;
     font-size: 16px;
     resize: none;
+  }
+
+  /* Estilo de los enlaces del menú */
+  a {
+    text-decoration: none; /* Quita el subrayado */
+    color: #121111; /* Color del texto */
+    font-size: 25px; /* Tamaño de la fuente */
+    transition: color 0.3s; /* Transición de color */
+    padding: 10px 20px; /* Espacio interno */
+    background-color: #ffffff; 
+    border-radius: 100px;
+  }
+  
+  a:hover {
+    color: #fff; /* Cambio de color al pasar el cursor */
+    background-color: #007bff; /* Cambio de color de fondo al pasar el cursor */
+    border-radius: 100px;
   }
