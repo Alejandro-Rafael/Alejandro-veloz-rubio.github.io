@@ -17,7 +17,7 @@ let nom_inci=document.getElementById('tipos_inci_delete').value;
 
 //se realiza una peticion para eliminar la incidencia en base a su nombre
 
-    fetch(`https://incidencia-karmina-2.onrender.com/api/Incidencias/${nom_inci}`,{
+    fetch(`https://incidenciakarmina-production.up.railway.app/api/Incidencias/${nom_inci}`,{
         method:'DELETE',
         body:JSON.stringify(),
         headers:{
@@ -64,7 +64,7 @@ function edit_inci(id_inci){
         }
 
         //se hace una peticion para editar dicha informacion guardada en un  JSON
-        fetch('https://incidencia-karmina-2.onrender.com/api/Incidencias/edit_inci/',{
+        fetch('https://incidenciakarmina-production.up.railway.app/api/Incidencias/edit_inci/',{
             method:'PUT',
             body:JSON.stringify(datos_inci),
             headers:{
@@ -95,7 +95,7 @@ function datos_incidencia(value_inci){
 
     //se hace una peticion para buscar la incidencia
 
-    fetch(`https://incidencia-karmina-2.onrender.com/api/Incidencias/espec/${value_inci}`,{
+    fetch(`https://incidenciakarmina-production.up.railway.app/api/Incidencias/espec/${value_inci}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -141,7 +141,7 @@ function datos_incidencia(value_inci){
 function areasdelhotel() {
 
     //se hace una peticion para mandar traer las areas disponibles
-    fetch('https://incidencia-karmina-2.onrender.com/api/Areas_h',{
+    fetch('https://incidenciakarmina-production.up.railway.app/api/Areas_h',{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -182,7 +182,7 @@ function buscar_dispo(nom_problem){
     let dispo=document.getElementById(nom_problem).value;
 
     //se hace una peticion para buscar su disponibilidad
-    fetch(`https://incidencia-karmina-2.onrender.com/api/Incidencias/dispo/${dispo}`,{
+    fetch(`https://incidenciakarmina-production.up.railway.app/api/Incidencias/dispo/${dispo}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -265,7 +265,7 @@ function buscar_inci_area(nom_incidencia,incidencia,tarea,div){
         
     }else{
         //en caso contrario hara una peticion donde pide las incidencias por area seleccionada
-        fetch(`https://incidencia-karmina-2.onrender.com/api/Incidencias/Areas/${buscar_inci}`,{
+        fetch(`https://incidenciakarmina-production.up.railway.app/api/Incidencias/Areas/${buscar_inci}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -344,7 +344,7 @@ btnagregarINCI.addEventListener('click',()=>{
         };
         
         //se hara un peticion a la api para poder agregar los datos
-        fetch('https://incidencia-karmina-2.onrender.com/api/Incidencias',{
+        fetch('https://incidenciakarmina-production.up.railway.app/api/Incidencias',{
             method:'POST',
             body:JSON.stringify(datos_inci),//se mandan los datos JSON
             headers:{

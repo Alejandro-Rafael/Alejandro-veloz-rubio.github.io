@@ -7,7 +7,7 @@ let empleados_vector=[];
 
 function empleados_open(){
 
-    fetch('https://incidencia-karmina-2.onrender.com/api/Empleados',{
+    fetch('https://incidenciakarmina-production.up.railway.app/api/Empleados',{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -27,7 +27,7 @@ function empleados_open(){
 function llamado_areas(){
 
     //se hace una peticion para obtener las areas del hotel
-    fetch('https://incidencia-karmina-2.onrender.com/api/Areas_h',{
+    fetch('https://incidenciakarmina-production.up.railway.app/api/Areas_h',{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -67,7 +67,7 @@ function buscar_reportes(){
 
     if(area=='todos'){
 
-        fetch( `https://incidencia-karmina-2.onrender.com/api/Reporte/todos_reportes/open`,{
+        fetch( `https://incidenciakarmina-production.up.railway.app/api/Reporte/todos_reportes/open`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -174,7 +174,7 @@ function buscar_reportes(){
     }else{
 
          //se hace una peticion en donde se busca los empleados por area
-    fetch(`https://incidencia-karmina-2.onrender.com/api/Empleados/${area}`,{
+    fetch(`https://incidenciakarmina-production.up.railway.app/api/Empleados/${area}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -193,7 +193,7 @@ function buscar_reportes(){
     })
 
     //porteriomente se hace una peticion para buscar los reportes por area que esten abiertos
-    fetch( `https://incidencia-karmina-2.onrender.com/api/Reporte/${area}`,{
+    fetch( `https://incidenciakarmina-production.up.railway.app/api/Reporte/${area}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -310,7 +310,7 @@ function Empleado_asignado(id_reporte){
 
 
         // se hace una peticion para actualizar un reporte 
-        fetch('https://incidencia-karmina-2.onrender.com/api/Reporte',{
+        fetch('https://incidenciakarmina-production.up.railway.app/api/Reporte',{
             method:'PUT',
             body:JSON.stringify(datos_asignacion),//se manda los datos JSON
             headers:{
@@ -319,9 +319,6 @@ function Empleado_asignado(id_reporte){
         })
         .then(res=>res.json())
         .then(json=>{
-
-        //al terminar se muestra un mensaje
-        alert('Se actualizo un reporte')
 
         //se actualiza la tabla con los reportes que aun quedan
         buscar_reportes();
