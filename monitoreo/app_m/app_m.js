@@ -5,7 +5,7 @@ let empl_div=document.getElementById('empleados_div');
 let lista=document.getElementById('result_all_reports');
 
 //se hace una peticion de tipo fetch para traer todas las areas del hotel
-fetch('https://incidenciakarmina-production.up.railway.app/api/Areas_h',{
+fetch('https://incidencia-karmina-2.onrender.com/api/Areas_h',{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -53,7 +53,7 @@ btn_buscar_empleados.addEventListener('click',()=>{
     }else{
 
         //en caso contrario se hara una peticion fetch
-    fetch(`https://incidenciakarmina-production.up.railway.app/api/Empleados/${area}`,{
+    fetch(`https://incidencia-karmina-2.onrender.com/api/Empleados/${area}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -197,7 +197,7 @@ btn_buscar_area.addEventListener('click',()=>{
     }
     
     //se hace una peticion fetch con la sentencia para obtener datos en base a los filtros impuestos por el usuario
-    fetch( `https://incidenciakarmina-production.up.railway.app/api/Reporte/monitoreo_reportes/${res}`,{
+    fetch( `https://incidencia-karmina-2.onrender.com/api/Reporte/monitoreo_reportes/${res}`,{
             method:'GET',
             body:JSON.stringify(),
             headers:{

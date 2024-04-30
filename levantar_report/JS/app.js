@@ -8,7 +8,7 @@ let form=document.getElementById("form_client");
 function folio_reporte(tiempo,numero_room,estado_reporte){
     let condicion=`fecha_hora_report='${tiempo}' && numero_habitacion=${numero_room} && estado='${estado_reporte}'`;
     
-    fetch( `https://incidenciakarmina-production.up.railway.app/api/Reporte/Numero_folio/${condicion}`,{
+    fetch( `https://incidencia-karmina-2.onrender.com/api/Reporte/Numero_folio/${condicion}`,{
             method:'GET',
             body:JSON.stringify(),
             headers:{
@@ -33,7 +33,7 @@ function folio_reporte(tiempo,numero_room,estado_reporte){
 function tipos_incidencias() {
 
 //se hace una peticion para mandar llamar a todas las incidencias
-fetch('https://incidenciakarmina-production.up.railway.app/api/Incidencias',{
+fetch('https://incidencia-karmina-2.onrender.com/api/Incidencias',{
     method:'GET',
     body:JSON.stringify(),
     headers:{
@@ -107,7 +107,7 @@ btnagregarproducto.addEventListener('click',()=>{
         };
     
         //se hace la peticion a la api para registrar el reporte
-        fetch('https://incidenciakarmina-production.up.railway.app/api/Reporte',{
+        fetch('https://incidencia-karmina-2.onrender.com/api/Reporte',{
             method:'POST',
             body:JSON.stringify(datos_report),//se mandan los datos
             headers:{

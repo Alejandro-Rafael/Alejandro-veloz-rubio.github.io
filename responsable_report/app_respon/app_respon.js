@@ -23,7 +23,7 @@ function buscar_reportes_areas(){
         empleados=' ';
         div.innerHTML="";
 
-        fetch(`https://incidenciakarmina-production.up.railway.app/api/Empleados/${area}`,{
+        fetch(`https://incidencia-karmina-2.onrender.com/api/Empleados/${area}`,{
             method:'GET',
             body:JSON.stringify(),
             headers:{
@@ -43,7 +43,7 @@ function buscar_reportes_areas(){
 
         
         //se hace la peticion para buscar reportes en proceso en base al area
-     fetch(`https://incidenciakarmina-production.up.railway.app/api/Reporte/reportes_area/responsable/${area}`,{
+     fetch(`https://incidencia-karmina-2.onrender.com/api/Reporte/reportes_area/responsable/${area}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -130,7 +130,7 @@ function buscar_reportes_areas(){
 function areas_empleados(){
 
     //se usa la peticion fetch para mandar llamar a las areas
-    fetch('https://incidenciakarmina-production.up.railway.app/api/Areas_h',{
+    fetch('https://incidencia-karmina-2.onrender.com/api/Areas_h',{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -179,7 +179,7 @@ function buscar_empleados(){
      lista.innerHTML="";
  
      //se hace la peticion para buscar empleados en base al area
-     fetch(`https://incidenciakarmina-production.up.railway.app/api/Empleados/${area}`,{
+     fetch(`https://incidencia-karmina-2.onrender.com/api/Empleados/${area}`,{
          method:'GET',
          body:JSON.stringify(),
          headers:{
@@ -239,7 +239,7 @@ function buscar_reportes(){
     }else{
         
             //se hace un peticion para buscar los reportes asignadas
-            fetch( `https://incidenciakarmina-production.up.railway.app/api/Reporte/Empleados_report/${id_empleado}`,{
+            fetch( `https://incidencia-karmina-2.onrender.com/api/Reporte/Empleados_report/${id_empleado}`,{
                 method:'GET',
                 body:JSON.stringify(),
                 headers:{
@@ -355,7 +355,7 @@ function Empleado_asignado(id_reporte,definitiva){
 
 
         //se hace una peticion fetch donde se manda los datos JSON
-        fetch('https://incidenciakarmina-production.up.railway.app/api/Reporte/Cierre_reportes/final',{
+        fetch('https://incidencia-karmina-2.onrender.com/api/Reporte/Cierre_reportes/final',{
             method:'PUT',
             body:JSON.stringify(datos),//se mandan los datos
             headers:{

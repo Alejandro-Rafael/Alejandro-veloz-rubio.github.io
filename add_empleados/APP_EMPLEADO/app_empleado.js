@@ -15,7 +15,7 @@ function eliminar_empleado(){
     let id_em_delete=document.getElementById('empleados_delete').value;
 
     //se hace la peticion de eliminacion pasando por parametro el id del empleado
-    fetch(`https://incidenciakarmina-production.up.railway.app/api/Empleados/${id_em_delete}`,{
+    fetch(`https://incidencia-karmina-2.onrender.com/api/Empleados/${id_em_delete}`,{
         method:'DELETE',
         body:JSON.stringify(),
         headers:{
@@ -64,7 +64,7 @@ function datos(id_edit_empleado){
             };
 
             //hacemos nuestra peticion de edicion
-            fetch('https://incidenciakarmina-production.up.railway.app/api/Empleados/edit',{
+            fetch('https://incidencia-karmina-2.onrender.com/api/Empleados/edit',{
                 method:'PUT',
                 body:JSON.stringify(datos_empleado_edit),//mandamos los datos en JSON
                 headers:{
@@ -98,7 +98,7 @@ function datos(id_edit_empleado){
 function areas_empleados() {
 
     //se hace una peticion el acual se pide traer todas las areas
-    fetch('https://incidenciakarmina-production.up.railway.app/api/Areas_h',{
+    fetch('https://incidencia-karmina-2.onrender.com/api/Areas_h',{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -137,7 +137,7 @@ function datos_empleado(id_em){
     let id=parseInt(id_em);
 
     //hacemos una peticion en donde obtengamos al empleado por su id
-    fetch(`https://incidenciakarmina-production.up.railway.app/api/Empleados/edit_search/${id}`,{
+    fetch(`https://incidencia-karmina-2.onrender.com/api/Empleados/edit_search/${id}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -216,7 +216,7 @@ btnagregarempleado.addEventListener('click',()=>{
         };
 
         //se realiza una peticion para agregar los datos dek nuevo empleado
-        fetch('https://incidenciakarmina-production.up.railway.app/api/Empleados',{
+        fetch('https://incidencia-karmina-2.onrender.com/api/Empleados',{
             method:'POST',
             body:JSON.stringify(datos_empleado),
             headers:{
@@ -253,7 +253,7 @@ function buscar_disponi(id_dispo){
 
         //en caso contrario se buscara si el empleado esta disponible para modificar o eliminar 
         
-    fetch(`https://incidenciakarmina-production.up.railway.app/api/Empleados/dipo_em/${id_em}`,{
+    fetch(`https://incidencia-karmina-2.onrender.com/api/Empleados/dipo_em/${id_em}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -340,7 +340,7 @@ function buscar_empleados(id,empleados,tarea,div){
 
     //en caso contrario que este vacia se buscara empleados del area seleccionada
 
-    fetch(`https://incidenciakarmina-production.up.railway.app/api/Empleados/${area}`,{
+    fetch(`https://incidencia-karmina-2.onrender.com/api/Empleados/${area}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{

@@ -13,7 +13,7 @@ btnbuscar.addEventListener('click',()=>{
 
         let condicion=`id_report=${folio} && numero_habitacion=${num_room}`;
 
-        fetch(`https://incidenciakarmina-production.up.railway.app/api/Reporte/Estado_reporte/${condicion}`,{
+        fetch(`https://incidencia-karmina-2.onrender.com/api/Reporte/Estado_reporte/${condicion}`,{
             method:'GET',
             body:JSON.stringify(),
             headers:{
