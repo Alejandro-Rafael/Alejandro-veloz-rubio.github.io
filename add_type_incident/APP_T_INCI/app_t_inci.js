@@ -5,6 +5,9 @@ let div_edit_inci=document.getElementById('inci_area');
 let div_delete_inci=document.getElementById('inci_area_delete');
 let form_inci=document.getElementById('form_inci'); 
 
+//declaramos una variable que haga referencia a la tabla de html
+let tabla=document.getElementById('tabla_incidencias');
+
 //se crea una variable que contendra las areas del hotel
 let lista_areas;
 
@@ -155,6 +158,7 @@ function areasdelhotel() {
         let selec_areas_hotel=document.getElementById('Areas_hotel')
         let selec_areas_hotel_edit=document.getElementById('Areas_hotel_edit_s')
         let selec_area_delete=document.getElementById('Areas_hotel_delete_s')
+        let selec_area_inci=document.getElementById('areas_incidencias')
 
         //se crea una variable que crea la primera opcion por default
         lista_areas='<option value="">*</option>';
@@ -169,6 +173,7 @@ function areasdelhotel() {
         selec_areas_hotel.innerHTML=lista_areas;
         selec_areas_hotel_edit.innerHTML=lista_areas;
         selec_area_delete.innerHTML=lista_areas;
+        selec_area_inci.innerHTML=`${lista_areas} <option value="todos">Todas las areas</option>`
     })
         
 }  
@@ -364,6 +369,120 @@ btnagregarINCI.addEventListener('click',()=>{
 
    
 });
+
+let btn_show_inci=document.getElementById('btn_show_incidencias')
+
+btn_show_inci.addEventListener('click',()=>{
+
+    let select_areas_empleados=document.getElementById('areas_incidencias').value;
+
+    if(select_areas_empleados==""){
+        alert('Seleccione un area')
+        tabla.innerHTML="";        
+    }else{
+        if(select_areas_empleados=='todos'){
+            
+
+            fetch('https://incidencia-karmina-2.onrender.com/api/Incidencias/listar_incidencias/areas',{
+                method:'GET',
+                body:JSON.stringify(),
+                headers:{
+                    'Content-Type':'application/json'
+                }
+            })
+            .then(res=>res.json())
+            .then(json=>{
+        
+                //se crea una variable con elementos html que son los titulos de la tabla
+                let titulos_tabla=`
+                <thead>
+                <tr>
+                    <th>Nombre de la incidencia</th>
+                    <th>Descripción de la incidencia</th>
+                    <th>Area asignada</th>
+                </tr>
+                </tehead>`;
+        
+                //variable que lamacenara los datos recibidos por la peticion fetch
+                let res='';
+        
+                for(let i=0;i<json.length;i++){
+        
+                    res+=`
+                    <tbody>
+                    <tr>
+                        <td>${json[i].tipo_incidencia}</td>
+                        <td>${json[i].descripcion}</td>  
+                        <td>${json[i].area_asignada}</td>  
+                    </tr>
+                    </tbody>
+                    `;
+                }
+            
+                //se inserta la informacion en la tabla html
+                tabla.innerHTML=`${titulos_tabla} ${res}`;
+            })
+        
+
+        }else{
+
+            fetch(`https://incidencia-karmina-2.onrender.com/api/Incidencias/listar_incidencias/areas/${select_areas_empleados}`,{
+                method:'GET',
+                body:JSON.stringify(),
+                headers:{
+                    'Content-Type':'application/json'
+                }
+            })
+            .then(res=>res.json())
+            .then(json=>{
+
+                if(json.length==0){
+                    alert('No se encontro incidencias');
+                    tabla.innerHTML="";
+                }else{
+
+                    //se crea una variable con elementos html que son los titulos de la tabla
+                let titulos_tabla=`
+                <thead>
+                <tr>
+                    <th>Nombre de la incidencia</th>
+                    <th>Descripción de la incidencia</th>
+                    <th>Area asignada</th>
+                </tr>
+                </tehead>`;
+        
+                //variable que lamacenara los datos recibidos por la peticion fetch
+                let res='';
+        
+                for(let i=0;i<json.length;i++){
+        
+                    res+=`
+                    <tbody>
+                    <tr>
+                        <td>${json[i].tipo_incidencia}</td>
+                        <td>${json[i].descripcion}</td>  
+                        <td>${json[i].area_asignada}</td>  
+                    </tr>
+                    </tbody>
+                    `;
+                }
+            
+                //se inserta la informacion en la tabla html
+                tabla.innerHTML=`${titulos_tabla} ${res}`;
+
+                }
+                
+                
+            })
+        
+
+        }
+    }
+    
+   
+
+
+})
 
 
 //mandamos llamar a la funcion areas 

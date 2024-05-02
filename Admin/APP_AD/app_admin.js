@@ -266,7 +266,7 @@ function buscar_reportes(){
             lista.innerHTML=titulos+rest;
 
             //se limpia la variable empleados
-            empleados=" ";
+            empleados="";
             
         }
         

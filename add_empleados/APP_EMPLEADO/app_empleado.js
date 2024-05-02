@@ -7,6 +7,9 @@ let div_delete=document.getElementById('delete');
 let div_empleados_delete=document.getElementById('empleado_delete_div');
 let div_empleados_edit=document.getElementById('empleado_edit_div');
 
+//declaramos una variable que haga referencia a la tabla de html
+let tabla=document.getElementById('tabla_empleados');
+
 
 //esta funcion elimina empleados atraves de una peticion fetch
 function eliminar_empleado(){
@@ -112,6 +115,7 @@ function areas_empleados() {
         let selec_areas=document.getElementById('areas_hotel_empleados')
         let select_areas_edit=document.getElementById('areas_edit')
         let select_areas_delete=document.getElementById('areas_delete')
+        let select_areas_empleados=document.getElementById('areas_empleados')
         //se establece la variable que lamacenara las areas asi como una opcion vacia
         lista='<option value="">*</option>';
 
@@ -125,6 +129,7 @@ function areas_empleados() {
         selec_areas.innerHTML=lista;
         select_areas_edit.innerHTML=lista;
         select_areas_delete.innerHTML=lista;
+        select_areas_empleados.innerHTML=`${lista} <option value="todos">Todas las areas</option>`;
     })
         
 }  
@@ -401,6 +406,133 @@ function buscar_empleados(id,empleados,tarea,div){
     }
 }
 
+let btn_show_empleados=document.getElementById('btn_show_empleados')
+
+btn_show_empleados.addEventListener('click',()=>{ 
+
+    let select_empleados=document.getElementById('areas_empleados').value;
+
+    if(select_empleados==""){
+        alert('seleccione un area')
+        tabla.innerHTML="";
+    }else{
+
+        if(select_empleados=='todos'){
+        
+            //se hace una peticion el acual se pide traer todas los empleados
+        fetch('https://incidencia-karmina-2.onrender.com/api/empleados/listar_empleados/areas',{
+            method:'GET',
+            body:JSON.stringify(),
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+        .then(res=>res.json())
+        .then(json=>{
+            //se crea una variable con elementos html que son los titulos de la tabla
+            let titulos_tabla=`
+            <thead>
+            <tr>
+                <th>Nombre del empleado</th>
+                <th>Puesto a desempeñar</th>
+                <th>Numero de nomina</th>
+                <th>Area asignada</th>
+            </tr>
+            </tehead>`;
+    
+            //variable que lamacenara los datos recibidos por la peticion fetch
+            let res='';
+    
+            for(let i=0;i<json.length;i++){
+    
+                res+=`
+                <tbody>
+                <tr>
+                    <td>${json[i].nombres} ${json[i].apellido_p} ${json[i].apellido_m}</td>
+                    <td>${json[i].puesto}</td>  
+                    <td>${json[i].num_nomina}</td>
+                    <td>${json[i].area_asignada}</td>  
+                </tr>
+                </tbody>
+                `;
+            }
+        
+            //se inserta la informacion en la tabla html
+            tabla.innerHTML=`${titulos_tabla} ${res}`;
+    
+    
+        })
+        }else{
+
+              //se hace una peticion el acual se pide traer todas los empleados
+        fetch(`https://incidencia-karmina-2.onrender.com/api/empleados/listar_empleados/areas/${select_empleados}`,{
+            method:'GET',
+            body:JSON.stringify(),
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+        .then(res=>res.json())
+        .then(json=>{
+
+            if(json.length==0){
+                alert('No se encontraron empleados');
+                tabla.innerHTML="";
+            }else{
+
+            //se crea una variable con elementos html que son los titulos de la tabla
+            let titulos_tabla=`
+            <thead>
+            <tr>
+                <th>Nombre del empleado</th>
+                <th>Puesto a desempeñar</th>
+                <th>Numero de nomina</th>
+                <th>Area asignada</th>
+            </tr>
+            </tehead>`;
+    
+            //variable que lamacenara los datos recibidos por la peticion fetch
+            let res='';
+    
+            for(let i=0;i<json.length;i++){
+    
+                res+=`
+                <tbody>
+                <tr>
+                    <td>${json[i].nombres} ${json[i].apellido_p} ${json[i].apellido_m}</td>
+                    <td>${json[i].puesto}</td>  
+                    <td>${json[i].num_nomina}</td>
+                    <td>${json[i].area_asignada}</td>  
+                </tr>
+                </tbody>
+                `;
+            }
+        
+            //se inserta la informacion en la tabla html
+            tabla.innerHTML=`${titulos_tabla} ${res}`;
+
+            }
+    
+            
+    
+    
+        })
+
+            
+            
+            
+        }
+
+
+    }
+
+
+
+   
+
+    
+
+})
 
 //se manda llamar en primera instancia a la funcion areas
 areas_empleados();
