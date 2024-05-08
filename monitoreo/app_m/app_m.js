@@ -155,7 +155,6 @@ btn_buscar_area.addEventListener('click',()=>{
             <th>Observaciones</th>
             <th>Area</th>
             <th>Empleado Asignado</th>
-            <th>Hora en que se asigno al empleado</th>
             <th>Estatus del reporte</th>
             <th>Fecha y hora del estatus: abierto</th>
             <th>Fecha y hora del estatus: en proceso</th>
@@ -200,7 +199,6 @@ btn_buscar_area.addEventListener('click',()=>{
                 <td>${json[i].observaciones}</td>
                 <td>${json[i].nombre_de_area}</td>    
                 <td>${json[i].apellido_p} ${json[i].apellido_m} ${json[i].nombres}</td>      
-                <td>${json[i].date_asignacion_respon}</td>
                 <td>${json[i].estado}</td>          
                 <td>${json[i].hora_alta}</td>  
                 <td>${json[i].hora_proceso}</td> 
@@ -289,7 +287,6 @@ btn_buscar_area.addEventListener('click',()=>{
                 <th>Observaciones</th>
                 <th>Area</th>
                 <th>Empleado Asignado</th>
-                <th>Hora en que se asigno al empleado</th>
                 <th>Estatus del reporte</th>
                 <th>Fecha y hora del estatus: abierto</th>
                 <th>Fecha y hora del estatus: en proceso</th>
@@ -334,7 +331,6 @@ btn_buscar_area.addEventListener('click',()=>{
                     <td>${json[i].observaciones}</td>
                     <td>${json[i].nombre_de_area}</td>    
                     <td>${json[i].apellido_p} ${json[i].apellido_m} ${json[i].nombres}</td>      
-                    <td>${json[i].date_asignacion_respon}</td>
                     <td>${json[i].estado}</td>          
                     <td>${json[i].hora_alta}</td>  
                     <td>${json[i].hora_proceso}</td> 

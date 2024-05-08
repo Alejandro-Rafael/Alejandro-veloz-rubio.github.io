@@ -22,7 +22,7 @@ function edit_area(id_area){
             }
             
             //se hace peticion tipo "PUT" a la ruta que permita editar areas
-            fetch('https://incidencia-karmina-2.onrender.com/api/Areas_h',{
+            fetch('http://localhost:1339/api/Areas_h',{
                 method:'PUT',
                 body:JSON.stringify(datos_de_edit),//se envian los datos
                 headers:{
@@ -53,7 +53,7 @@ function edit_area(id_area){
 function delete_area(id_area_delete){
 
     //se hace una peticion tipo "delete" anexando el id del area a eliminar, a traves de la ruta especifica
-    fetch(`https://incidencia-karmina-2.onrender.com/api/Areas_h/${id_area_delete}`,{
+    fetch(`http://localhost:1339/api/Areas_h/${id_area_delete}`,{
         method:'DELETE',
         body:JSON.stringify(),
         headers:{
@@ -82,7 +82,7 @@ function areas(){
 
     //se consulta por la ruta las areas
 
-    fetch('https://incidencia-karmina-2.onrender.com/api/Areas_h',{
+    fetch('http://localhost:1339/api/Areas_h',{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -135,7 +135,7 @@ btnagregararea.addEventListener('click',()=>{
         let datos_area={area_nombre:nombre_area};
 
         //se hace una peticion para agregar la nueva area
-        fetch('https://incidencia-karmina-2.onrender.com/api/Areas_h',{
+        fetch('http://localhost:1339/api/Areas_h',{
             method:'POST',
             body:JSON.stringify(datos_area),//mandamos los datos
             headers:{
@@ -176,7 +176,7 @@ function dispo_g(area_x){
     }else{
 
     //en caso contrario se hara una peticion a la ruta especifica y al area especifica
-    fetch(`https://incidencia-karmina-2.onrender.com/api/Areas_h/dipo_area/${area}`,{
+    fetch(`http://localhost:1339/api/Areas_h/dipo_area/${area}`,{
         method:'GET',
         body:JSON.stringify(),
         headers:{
@@ -266,7 +266,7 @@ let btn_show_areas=document.getElementById('btn_show_areas');
 btn_show_areas.addEventListener('click',()=>{
 
 //se hace una peticion en donde se pide todas las areas a la api    
-fetch('https://incidencia-karmina-2.onrender.com/api/Areas_h',{
+fetch('http://localhost:1339/api/Areas_h',{
     method:'GET',
     body:JSON.stringify(),
     headers:{
