@@ -76,38 +76,30 @@ button:hover {
     border-bottom: 2px solid #007bff;
   }
   
-    /* Estilo de los enlaces del menú */
-a {
-  text-decoration: none; /* Quita el subrayado */
-  color: #000000; /* Color del texto */
-  font-size: 25px; /* Tamaño de la fuente */
-  margin-right: 20px; /* Margen derecho entre enlaces */
-  transition: color 0.3s; /* Transición de color */
-  padding: 10px 20px; /* Espacio interno */
-  background-color: #ffffff; 
-  border-radius: 100px;
-}
 
-a:hover {
-  color: #fff; /* Cambio de color al pasar el cursor */
-  background-color: #007bff; /* Cambio de color de fondo al pasar el cursor */
-  border-radius: 100px;
-}
-
-#nom_user{
-  color: #fff; /* Cambio de color al pasar el cursor */
-  text-align:right;
-  font-size: 1.4em;
-
+  #nom_user{
+    color: #fffbfb;
+   }
   
-}
-
-#log_out {
-  background-color: #007bff;
-  color: #fff;
-  padding: 1em;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 77em;
-}
+  #logo_home{
+    clip-path: circle(40%);
+    width: 4em;
+    height: 4em;
+  }
+  
+  #div_home{
+    float: left;
+    position: relative;
+  }
+  
+  #div_user{
+    float: right;
+    position: relative;
+    
+  }
+  
+  #logo_out{
+    clip-path: circle(50%);
+    width: 4em;
+    height: 4em;
+  }
