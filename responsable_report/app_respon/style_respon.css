@@ -115,3 +115,20 @@ a:hover {
   background-color: #007bff; /* Cambio de color de fondo al pasar el cursor */
   border-radius: 100px;
 }
+
+#nom_user{
+  color: #fff; /* Cambio de color al pasar el cursor */
+  text-align:right;
+  font-size: 1.4em;
+
+}
+
+#log_out {
+  background-color: #007bff;
+  color: #fff;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 70%;
+}

@@ -1,3 +1,33 @@
+let cookie=document.cookie;
+
+let nombre=cookie.split(';');
+
+function deleteCookie(nombre) {
+
+    document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    
+  }
+
+  
+let name_complete=nombre[0].split('=');
+let user_complete=nombre[1].split('=');
+
+let nom_user=document.getElementById('nom_user')
+
+nom_user.innerHTML=name_complete[1];
+
+btn_logout=document.getElementById("log_out");
+
+btn_logout.addEventListener('click',()=>{
+
+
+    deleteCookie("nombre");
+    deleteCookie("usuario");
+
+    location.replace('../User/index.html');
+
+})
+
 //se crea una variable en donde hace referencia a la tabla
 let lista=document.getElementById('result_problem');
 //esta variable guardara a los empleados del area para que sean asignados
@@ -294,40 +324,59 @@ function Empleado_asignado(id_reporte){
     let time = date.toLocaleString('es-MX', options);
     let estado="En proceso";
 
-    if(empleado==""){
-        alert("Seleccione un empleado")
-    }else{
+    fetch(`https://incidencia-karmina-2.onrender.com/api/Reporte/validacion/user_process/${id_reporte}`,{
+        method:'GET',
+        body:JSON.stringify(),
+        headers:{
+            'Content-Type':'application/json'
+        }
+    })
+    .then(res=>res.json())
+    .then(json=>{
 
-        //esos datos se almacenan en formato JSON
-        let datos_asignacion=
-        {
-            id_reporte:reporte,
-            id_empleado:parseInt(empleado),
-            tiempo:time,
-            estatus:estado
+        if(json[0].u_proceso==null || json[0].u_proceso=='- - -'){
+
+            if(empleado==""){
+                alert("Seleccione un empleado")
+            }else{
+        
+                //esos datos se almacenan en formato JSON
+                let datos_asignacion=
+                {
+                    id_reporte:reporte,
+                    id_empleado:parseInt(empleado),
+                    tiempo:time,
+                    estatus:estado,
+                    user_process:user_complete[1]
+                }
+        
+        
+        
+                // se hace una peticion para actualizar un reporte 
+                fetch('https://incidencia-karmina-2.onrender.com/api/Reporte',{
+                    method:'PUT',
+                    body:JSON.stringify(datos_asignacion),//se manda los datos JSON
+                    headers:{
+                        'Content-Type':'application/json'
+                    }
+                })
+                .then(res=>res.json())
+                .then(json=>{
+        
+                //se actualiza la tabla con los reportes que aun quedan
+                buscar_reportes();
+                })
+        
+            }
+
+
+        }else if(json[0].u_proceso!=null || json[0].u_proceso!='- - -'){
+
+            alert('Este reporte ya fue asignado')
         }
 
+    })
 
-
-        // se hace una peticion para actualizar un reporte 
-        fetch('https://incidencia-karmina-2.onrender.com/api/Reporte',{
-            method:'PUT',
-            body:JSON.stringify(datos_asignacion),//se manda los datos JSON
-            headers:{
-                'Content-Type':'application/json'
-            }
-        })
-        .then(res=>res.json())
-        .then(json=>{
-
-        //se actualiza la tabla con los reportes que aun quedan
-        buscar_reportes();
-        })
-
-    }
-    
-
-   
 }
     
 

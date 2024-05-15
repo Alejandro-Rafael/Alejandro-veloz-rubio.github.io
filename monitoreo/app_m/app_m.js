@@ -1,3 +1,34 @@
+let cookie=document.cookie;
+
+let nombre=cookie.split(';');
+
+function deleteCookie(nombre) {
+
+    document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    
+  }
+
+  
+let name_complete=nombre[0].split('=');
+let user_complete=nombre[1].split('=');
+
+let nom_user=document.getElementById('nom_user')
+
+nom_user.innerHTML=name_complete[1];
+
+btn_logout=document.getElementById("log_out");
+
+btn_logout.addEventListener('click',()=>{
+
+
+    deleteCookie("nombre");
+    deleteCookie("usuario");
+
+    location.replace('../User/index.html');
+
+})
+
+
 //se crea una funcion en donde hace referencia al div 
 let empl_select=document.getElementById('empleados');
 
@@ -157,9 +188,12 @@ btn_buscar_area.addEventListener('click',()=>{
             <th>Empleado Asignado</th>
             <th>Estatus del reporte</th>
             <th>Fecha y hora del estatus: abierto</th>
+            <th>Usuario de alta</th>
             <th>Fecha y hora del estatus: en proceso</th>
+            <th>Usuario de proceso</th>
             <th>Fecha y hora del estatus: cerrado</th>
             <th>Fecha y hora del estatus: inconcluso</th>
+            <th>Usuario de cerrado o inconcluso</th>
             <th>Comentarios</th>
             <th>Nombre del empleado que cerro el reporte</th>
         </tr>
@@ -201,9 +235,12 @@ btn_buscar_area.addEventListener('click',()=>{
                 <td>${json[i].apellido_p} ${json[i].apellido_m} ${json[i].nombres}</td>      
                 <td>${json[i].estado}</td>          
                 <td>${json[i].hora_alta}</td>  
+                <td>${json[i].u_alta}</td>
                 <td>${json[i].hora_proceso}</td> 
+                <td>${json[i].u_proceso}</td> 
                 <td>${json[i].hora_cierre}</td>
-                <td>${json[i].hora_inconcluso}</td>  
+                <td>${json[i].hora_inconcluso}</td>
+                <td>${json[i].u_cierre}</td>   
                 <td>${json[i].comentarios}</td>  
                 <td>${json[i].cierr_p} ${json[i].cierr_m} ${json[i].cierr_n}</td>     
             </tr>
@@ -280,20 +317,23 @@ btn_buscar_area.addEventListener('click',()=>{
                 let titulos=`
             <thead>
             <tr>
-                <th>ID</th>
-                <th>Fecha del reporte</th>
-                <th>Numero de habitacion</th>
-                <th>Problema</th>
-                <th>Observaciones</th>
-                <th>Area</th>
-                <th>Empleado Asignado</th>
-                <th>Estatus del reporte</th>
-                <th>Fecha y hora del estatus: abierto</th>
-                <th>Fecha y hora del estatus: en proceso</th>
-                <th>Fecha y hora del estatus: cerrado</th>
-                <th>Fecha y hora del estatus: inconcluso</th>
-                <th>Comentarios</th>
-                <th>Nombre del empleado que cerro el reporte</th>
+                    <th>ID</th>
+                    <th>Fecha del reporte</th>
+                    <th>Numero de habitacion</th>
+                    <th>Problema</th>
+                    <th>Observaciones</th>
+                    <th>Area</th>
+                    <th>Empleado Asignado</th>
+                    <th>Estatus del reporte</th>
+                    <th>Fecha y hora del estatus: abierto</th>
+                    <th>Usuario de alta</th>
+                    <th>Fecha y hora del estatus: en proceso</th>
+                    <th>Usuario de proceso</th>
+                    <th>Fecha y hora del estatus: cerrado</th>
+                    <th>Fecha y hora del estatus: inconcluso</th>
+                    <th>Usuario de cerrado o inconcluso</th>
+                    <th>Comentarios</th>
+                    <th>Nombre del empleado que cerro el reporte</th>
             </tr>
             </thead>
             `
@@ -324,20 +364,23 @@ btn_buscar_area.addEventListener('click',()=>{
                 rest+=`
                 <tbody>
                 <tr>
-                    <td>${json[i].id_report}</td>
-                    <td>${json[i].fecha_hora_report}</td>
-                    <td>${json[i].numero_habitacion}</td>
-                    <td>${json[i].problema}</td>
-                    <td>${json[i].observaciones}</td>
-                    <td>${json[i].nombre_de_area}</td>    
-                    <td>${json[i].apellido_p} ${json[i].apellido_m} ${json[i].nombres}</td>      
-                    <td>${json[i].estado}</td>          
-                    <td>${json[i].hora_alta}</td>  
-                    <td>${json[i].hora_proceso}</td> 
-                    <td>${json[i].hora_cierre}</td>
-                    <td>${json[i].hora_inconcluso}</td>  
-                    <td>${json[i].comentarios}</td>  
-                    <td>${json[i].cierr_p} ${json[i].cierr_m} ${json[i].cierr_n}</td>     
+                        <td>${json[i].id_report}</td>
+                        <td>${json[i].fecha_hora_report}</td>
+                        <td>${json[i].numero_habitacion}</td>
+                        <td>${json[i].problema}</td>
+                        <td>${json[i].observaciones}</td>
+                        <td>${json[i].nombre_de_area}</td>    
+                        <td>${json[i].apellido_p} ${json[i].apellido_m} ${json[i].nombres}</td>      
+                        <td>${json[i].estado}</td>          
+                        <td>${json[i].hora_alta}</td>  
+                        <td>${json[i].u_alta}</td>
+                        <td>${json[i].hora_proceso}</td> 
+                        <td>${json[i].u_proceso}</td> 
+                        <td>${json[i].hora_cierre}</td>
+                        <td>${json[i].hora_inconcluso}</td>
+                        <td>${json[i].u_cierre}</td>   
+                        <td>${json[i].comentarios}</td>  
+                        <td>${json[i].cierr_p} ${json[i].cierr_m} ${json[i].cierr_n}</td>    
                 </tr>
                 </tbody>
                 `;

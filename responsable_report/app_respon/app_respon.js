@@ -1,3 +1,34 @@
+let cookie=document.cookie;
+
+let nombre=cookie.split(';');
+
+function deleteCookie(nombre) {
+
+    document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    
+  }
+
+  
+let name_complete=nombre[0].split('=');
+let user_complete=nombre[1].split('=');
+
+let nom_user=document.getElementById('nom_user')
+
+nom_user.innerHTML=name_complete[1];
+
+btn_logout=document.getElementById("log_out");
+
+btn_logout.addEventListener('click',()=>{
+
+
+    deleteCookie("nombre");
+    deleteCookie("usuario");
+
+    location.replace('../User/index.html');
+
+})
+
+
 //se crea una variable que guardara los empleados
 let empleados;
 
@@ -288,45 +319,70 @@ function Empleado_asignado(id_reporte,definitiva){
     let options = {timeZone: 'America/Mexico_City'};
     let time = date.toLocaleString('es-MX', options);
 
-    if(estado=="" || empleado=="" || comentarios ==""){
-        alert('Campos no validos')
-    }else{
+    fetch(`https://incidencia-karmina-2.onrender.com/api/Reporte/validacion/user_end/${id_reporte}`,{
+        method:'GET',
+        body:JSON.stringify(),
+        headers:{
+            'Content-Type':'application/json'
+        }
+    })
+    .then(res=>res.json())
+    .then(json=>{
 
-        //todos los datos obtenidos se crean en un JSON
-        let datos=
-        {
-            id_report:id,
-            estado:estado,
-            empleado:parseInt(empleado),
-            comentarios:comentarios,
-            time:time
+        if(json[0].u_cierre==null || json[0].u_cierre=='- - -'){
+
+            if(estado=="" || empleado=="" || comentarios ==""){
+                alert('Campos no validos')
+            }else{
+        
+                //todos los datos obtenidos se crean en un JSON
+                let datos=
+                {
+                    id_report:id,
+                    estado:estado,
+                    empleado:parseInt(empleado),
+                    comentarios:comentarios,
+                    time:time,
+                    user_end:user_complete[1]
+                }
+        
+        
+                //se hace una peticion fetch donde se manda los datos JSON
+                fetch('https://incidencia-karmina-2.onrender.com/api/Reporte/Cierre_reportes/final',{
+                    method:'PUT',
+                    body:JSON.stringify(datos),//se mandan los datos
+                    headers:{
+                        'Content-Type':'application/json'
+                    }
+                })
+                .then(res=>res.json())
+                .then(json=>{
+                    //si todo sale bien 
+                    // se actualiza los reportes
+                    
+                    if(definitiva=='buscar_reportes'){
+        
+                        buscar_reportes();
+        
+                    }else if(definitiva=='buscar_reportes_areas'){
+                  
+                        buscar_reportes_areas();
+                    }
+                })
+        
+            }
+
+
+
+        }else if(json[0].u_cierre!=null || json[0].u_cierre!='- - -'){
+
+            alert('Este reporte ya fue cerrado')
         }
 
+    })
 
-        //se hace una peticion fetch donde se manda los datos JSON
-        fetch('https://incidencia-karmina-2.onrender.com/api/Reporte/Cierre_reportes/final',{
-            method:'PUT',
-            body:JSON.stringify(datos),//se mandan los datos
-            headers:{
-                'Content-Type':'application/json'
-            }
-        })
-        .then(res=>res.json())
-        .then(json=>{
-            //si todo sale bien 
-            // se actualiza los reportes
-            
-            if(definitiva=='buscar_reportes'){
 
-                buscar_reportes();
-
-            }else if(definitiva=='buscar_reportes_areas'){
-          
-                buscar_reportes_areas();
-            }
-        })
-
-    }
+    
 
    
 }

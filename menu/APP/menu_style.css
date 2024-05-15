@@ -5,7 +5,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    text-align: center;
+    
 }
 
 h1{
@@ -20,6 +20,7 @@ div.menu-container {
     width: 17.1em;
     height: 15em;
     margin: 0 auto;
+    text-align: center;
 }
 
 /* Estilo de los enlaces del menú */
@@ -67,6 +68,7 @@ div.menu-container_2 {
     width: 11em;
     height: 12em;
     margin: 0 auto;
+    text-align: center;
     
 }
 
@@ -101,4 +103,20 @@ div.menu-container_2 a:hover {
     color: #fff; /* Cambio de color al pasar el cursor */
     background-color: #007bff; /* Cambio de color de fondo al pasar el cursor */
     border-radius: 10px;
+}
+
+#nom_user{
+    color: #fff; /* Cambio de color al pasar el cursor */
+    text-align:right;
+    
+}
+
+#log_out {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 85em;
 }
