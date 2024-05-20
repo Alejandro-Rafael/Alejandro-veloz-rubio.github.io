@@ -46,7 +46,8 @@ function validar_habitacion(num_room){
                         problema:Incidencia,
                         estado:estado,
                         area:area_in,
-                        observaciones:observaciones
+                        observaciones:observaciones,
+                        user_alta:`Cliente-${num_room}`
                     };
     
                     
