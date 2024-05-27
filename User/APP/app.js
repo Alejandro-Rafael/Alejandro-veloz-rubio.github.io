@@ -1,6 +1,17 @@
-let btn_login=document.getElementById('btn_login') 
+document.addEventListener('keydown', (event) => {
 
-btn_login.addEventListener('click',()=>{
+    var codeValue = event.code;
+
+    if(codeValue=="Enter"){
+        login()
+    }
+
+    
+  }, false);
+
+
+function login(){
+
     let user=document.getElementById('user').value
     let password=document.getElementById('password').value
 
@@ -30,21 +41,27 @@ btn_login.addEventListener('click',()=>{
 
             alert('Usuario o contraseña incorrectos');
     
-            
         }
-        
-
 
     })
 
-    }
+}
+
+
+
+}
+
+
+
+
+  
     
 
     
 
     
 
-})
+
 
 
 
